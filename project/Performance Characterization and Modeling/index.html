@@ -38,6 +38,23 @@
         .markdown strong > img {
             border: 1px solid rgba(0, 0, 0, 0.6);
         }
+
+        a.personnel {
+            display: inline-block;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        a.personnel > img {
+            width: 120px;
+            height: 120px;
+            background-size: 100%;
+            border-radius: 50%;
+            display: block;
+            content: '';
+
+            margin-bottom: 10px;
+        }
     </style><body><style>
     .responsive-container {
         margin: 0 auto;
@@ -239,7 +256,7 @@
 
     @media (max-width: 768px) {
         .menu-item {
-            margin: 0 10px;
+            margin: 0 5px;
         }
     }
 
@@ -359,7 +376,7 @@
             max-width: 1200px;
         }
     }
-</style><div class="responsive-container second-res" style="display:flex;flex-direction:column;"><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><a href="/"><div class="cupcake" style="display:flex;"><img src="/assets/img/cupcake.svg"></div></a><div class="yiqinzhao"><img src="/assets/img/slogan.svg"></div><div class="menu-row" style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/teaching')">teaching</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item" onclick="onMenuItemClick('/posts')">posts</div></div><div onclick="onMobileMenuOpenClick()" class="menu-icon"><img src="/assets/img/menu.svg"></div></div></div><div class="bg-mask remove"></div><div class="menu-row-mobile" style="display:flex;flex-direction:column;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div><div class="social-icons-mobile" style="display:flex;"><div style="display:flex;justify-content:space-between;"><a href="https://twitter.com/gtbelinda" target="_blank"><img src="/assets/social-icon/twitter.svg"><p>Twitter</p></a><a href="https://github.com/belindanju" target="_blank"><img src="/assets/social-icon/github.svg"><p>GitHub</p></a><a href="http://scholar.google.com/citations?user=vDzUD84AAAAJ&amp;hl=en" target="_blank"><img src="/assets/social-icon/google_scholar.png"><p>Scholar</p></a></div></div></div><script>
+</style><div class="responsive-container second-res" style="display:flex;flex-direction:column;"><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><a href="/"><div class="cupcake" style="display:flex;"><img src="/assets/img/cupcake.svg"></div></a><div class="yiqinzhao"><img src="/assets/img/slogan.svg"></div><div class="menu-row" style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">🏠home</div><div class="menu-item" onclick="onMenuItemClick('/news')">📰news</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/project')">📁project</div><div class="menu-item" onclick="onMenuItemClick('/teaching')">👩🏻‍🏫teaching</div><div class="menu-item" onclick="onMenuItemClick('/publication')">📖publication</div><div class="menu-item" onclick="onMenuItemClick('/posts')">📄posts</div></div><div onclick="onMobileMenuOpenClick()" class="menu-icon"><img src="/assets/img/menu.svg"></div></div></div><div class="bg-mask remove"></div><div class="menu-row-mobile" style="display:flex;flex-direction:column;"><div class="menu-item" onclick="onMenuItemClick('/')">🏠home</div><div class="menu-item" onclick="onMenuItemClick('/news')">📰news</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/project')">📁project</div><div class="menu-item" onclick="onMenuItemClick('/teaching')">👩🏻‍🏫teaching</div><div class="menu-item" onclick="onMenuItemClick('/publication')">📖publication</div><div class="menu-item" onclick="onMenuItemClick('/posts')">📄posts</div><div class="social-icons-mobile" style="display:flex;"><div style="display:flex;justify-content:space-between;"><a href="https://twitter.com/gtbelinda" target="_blank"><img src="/assets/social-icon/twitter.svg"><p>Twitter</p></a><a href="https://github.com/belindanju" target="_blank"><img src="/assets/social-icon/github.svg"><p>GitHub</p></a><a href="http://scholar.google.com/citations?user=vDzUD84AAAAJ&amp;hl=en" target="_blank"><img src="/assets/social-icon/google_scholar.png"><p>Scholar</p></a></div></div></div><script>
 function onMenuItemClick(target) {
     if (target === '/cv') window.open('/assets/yiqinzhao-cv.pdf')
     else window.location.href = target
