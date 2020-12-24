@@ -1,5 +1,5 @@
 <html>
-<style>
+    <style>
     body {
         margin: 0;
     }
@@ -23,68 +23,41 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/tomorrow.css" />
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
 
-    <title>Project | Tian Guo</title>
+    <title>Big Data | Tian Guo</title>
 </head>
 
 
-<style>
-    h1 {
-        width: 100%;
-    }
-
-    .markdown {
-        flex-wrap: wrap;
-    }
-
-    .markdown p {
-        margin: 0;
-    }
-
-    .markdown>blockquote {
-        width: 18%;
-        margin-right: 2%;
-
-        padding: 0;
-        border: none;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-
-        box-sizing: border-box;
-
-        background: transparent;
-
-        cursor: pointer;
-    }
-
-    .markdown>blockquote p:nth-child(2) {
-        color: #2230f3;
-    }
-
-    .markdown>blockquote:hover p {
-        color: #2230f3;
-    }
-
-    .markdown>blockquote>p:nth-child(1) {
-        margin-bottom: 1rem;
-    }
-
-    .markdown>blockquote p {
-        width: 100%;
-        text-align: center;
-    }
-
-    @media (max-width: 480px) {
-        .markdown>blockquote {
-            width: 100%;
+    <style>
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
         }
-    }
-</style>
 
+        .meta-row {
+            height: 35px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .meta-row > div {
+            margin-right: 10px;
+        }
+
+        .category {
+            font-weight: 600;
+        }
+
+        .eta {
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        .markdown strong > img {
+            border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+    </style>
 <body>
-    <div class="stack responsive-container" direction="column">
+    <div class="responsive-container stack" direction="column">
         <style>
     .nav-container {
         width: calc(100%);
@@ -442,51 +415,25 @@
 </script>
 
 
-        <div class="stack markdown">
-            <h1 id="mobile-deep-learning">Mobile Deep Learning</h1>
-<blockquote>
-<p><img src="modi.png" alt=""></p>
-<p><a href="mobile-deep-inference"><strong>Mobile Deep Inference</strong></a></p>
-<p>[SDK'21, CIKM'20, KDD'20, IC2E'20-a, IC2E'20-b, HotEdge'18, IC2E'18]</p>
-</blockquote>
-<blockquote>
-<p><img src="perseus_ic2e2020.png" alt=""></p>
-<p><a href="model-serving"><strong>Model Serving</strong></a></p>
-<p>[Perf'20, IC2E'20-a, DIDL'19, SEC'19]</p>
-</blockquote>
-<h1 id="cloud-resource-management">Cloud Resource Management</h1>
-<blockquote>
-<p><img src="spotmarket.png" alt=""></p>
-<p><a href="transient-servers"><strong>Transient Servers</strong></a></p>
-<p>[ICAC'19, arXiv'19, TPDS'17, EuroSys'16, EuroSys'15, SoCC'15]</p>
-</blockquote>
-<blockquote>
-<p><img src="spotmarket.png" alt=""></p>
-<p><a href=""><strong>Distributed and Edge Cloud</strong></a></p>
-<p>[TOIT'18, TAAS'18, IC2E'16, ICAC'15, MMSys'14, ATC'12]</p>
-</blockquote>
-<blockquote>
-<p><img src="spotmarket.png" alt=""></p>
-<p><a href="big-data"><strong>Big Data Frameworks</strong></a></p>
-<p>[ICDCS'20-b, VLDB'19, EuroSys'16]</p>
-</blockquote>
-<h1 id="mobile-augmented-and-virtual-reality">Mobile Augmented and Virtual Reality</h1>
-<blockquote>
-<p><img src="hotmobile-20.png" alt=""></p>
-<p><a href="lighting-estimation"><strong>Lighting Estimation</strong></a></p>
-<p>[ECCV'20, HotMobile'20, arXiv'20]</p>
-</blockquote>
-<blockquote>
-<p><img src="qurate_mmsys2020.png" alt=""></p>
-<p><a href="vr-streaming"><strong>VR and Video Streaming</strong></a></p>
-<p>[MMSys'20, MM'20-a, MM'20-b]</p>
-</blockquote>
-<h1 id="distributed-deep-learning">Distributed Deep Learning</h1>
-<blockquote>
-<p><img src="hotmobile-20.png" alt=""></p>
-<p><a href="performance-characterization-and-modeling"><strong>Performance Characterization and Modeling</strong></a></p>
-<p>[arXiv'20, ICDCS'20-a, ICAC'19]</p>
-</blockquote>
+        
+
+        <div class="markdown">
+            <h1 id="big-data">Big Data</h1>
+<p>So much data but so few computation resources! How should we crunch those data and extract insights in a cost-efficient and resource efficient manner? New hardware, new software stack, or just don't care about those data? Let us find out!</p>
+<h1 id="papers">Papers</h1>
+<!-- Note the naming convention for the thumbnail png  -->
+<p><strong>DistStream: An Order-Aware Distributed Framework for Online-Offline Stream Clustering Algorithms</strong></p>
+<p><em>Lijie Xu, Xingtong Ye, Kai Kang, Tian Guo, Wensheng Dou, Wei Wang and Jun Wei</em></p>
+<p>40th IEEE International Conference on Distributed Computing Systems (<strong>ICDCS'20</strong>)</p>
+<p><a href="diststream_icdcs2020.pdf"><strong><img src="thumbnail_diststream_icdcs2020.png" alt=""></strong></a></p>
+<pre class="hljs"><code>@inproceedings{distream_icdcs2020,
+author = {Xu, Lijie and Ye, Xingtong and Kang, Kai and Guo, Tian and Dou, Wensheng and Wang, Wei and Wei, Jun},
+title     = {Characterizing and Modeling Distributed Training with Transient Cloud GPU Servers},
+booktitle = {40th {IEEE} International Conference on Distributed Computing Systems, {ICDCS} 2020},
+year      = {2020},
+}
+</code></pre>
+<hr>
 
         </div>
 
@@ -508,18 +455,4 @@
 
     </div>
 </body>
-
-<script>
-    window.addEventListener('load', function () {
-        document.querySelectorAll('blockquote').forEach((v, i) => {
-            v.addEventListener('click', (() => {
-                let target = v.children[1].children[0].href
-                return function (e) {
-                    window.location.href = target
-                }
-            })())
-        })
-    })
-</script>
-
 </html>
