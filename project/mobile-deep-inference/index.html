@@ -1,376 +1,11 @@
-<html>
-    
-    
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta charset="utf-8">
-
-    <link rel="stylesheet" href="/assets/css/base.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-
-    <link rel="stylesheet" media="(prefers-color-scheme: light)" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/tomorrow.css" />
-    <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/atom-one-dark.css" />
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
-
-    <title>Mobile Deep Inference | Tian Guo</title>
-
-    <meta name="apple-mobile-web-app-capable" content="yes"></meta>
-    <meta name="apple-mobile-web-app-status-bar-style" content="default"></meta>
-    <meta name="apple-mobile-web-app-title" content="YiqinZhao"></meta>
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍💻</text></svg>">
-
-    <style>
-    body {
-        margin: 0;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    a {
-        color: var(--font-color);
-    }
-</style><style>
-        .title {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 0 0 10px 0;
-        }
-
-        .meta-row {
-            border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
-            margin-bottom: 20px;
-            opacity: 0.7;
-            font-style: italic;
-            flex-wrap: wrap;
-            padding: 10px 0;
-        }
-
-        .meta-row > * {
-            line-height: 1.5rem;
-        }
-
-        .date {
-            margin-right: 0.5rem;
-        }
-
-        .tag {
-            margin-right: 0.5rem;
-        }
-
-        .markdown strong > img {
-            border: 1px solid rgba(0, 0, 0, 0.6);
-        }
-
-        .hero-wrapper {
-            background-color: #f4f5f7;
-
-            padding: 0 0 40px 0;
-        }
-
-        .hero-container {
-            padding: 20px 0;
-
-            position: relative;
-
-            /* A fix for Safari image stretch */
-            align-items: flex-start;
-        }
-
-        .markdown strong > img {
-            border: 1px solid rgba(0, 0, 0, 0.6);
-        }
-
-        @media (max-width: 480px) {
-            .meta-row {
-                flex-wrap: wrap;
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .label-icon {
-                filter: invert(1);
-            }
-
-            .markdown strong > img {
-                filter: invert(0.85);
-            }
-        }
-    </style><style>
-    .nav-container {
-        width: 100%;
-        height: 60px;
-        padding: 20px 0;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        cursor: pointer;
-        color: var(--font-color);
-        transition: opacity 100ms linear;
-    }
-
-    .logo:hover {
-        opacity: 1;
-    }
-
-    .logo > img {
-        width: 3rem;
-    }
-
-    .menu-item {
-        font-size: 1.3rem;
-        font-weight: 700;
-        opacity: 0.7;
-        text-transform: capitalize;
-
-        margin: 0 17px;
-        padding: 0 5px;
-        cursor: pointer;
-
-        transition: opacity 100ms linear, border-bottom 100ms linear;
-    }
-
-    .menu-item:hover {
-        opacity: 1;
-        border-bottom: 3px solid #979797;
-        /* text-decoration-color: #979797;
-        text-decoration-thickness: 3px; */
-    }
-
-    .menu-item-active {
-        opacity: 1;
-        border-bottom: 3px solid #979797;
-        /* text-decoration: underline;
-        text-decoration-thickness: 3px; */
-    }
-
-    .menu-item:nth-last-child(1) {
-        margin-right: 0;
-    }
-
-    .menu-row>a {
-        color: var(--font-color);
-    }
-
-    .menu-row > a:hover {
-        text-decoration: none;
-    }
-
-    .menu-button {
-        display: none;
-    }
-
-    .mobile-nav {
-        width: 100%;
-        display: none;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        #menu-button-icon {
-            filter: invert();
-        }
-    }
-
-    @media (min-width: 320px) and (max-width: 768px)  {
-        body {
-            padding-top: 61px;
-        }
-
-        .hero-header {
-            overflow: hidden;
-        }
-
-        .logo {
-            display: none;
-        }
-
-        .nav-container {
-            padding: 0 0;
-            background-color: rgba(var(--font-rgb), 0.1);
-            position: fixed;
-            top: 0;
-            border-bottom: 1px solid #636363;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 10;
-            justify-content: flex-end;
-        }
-
-        .menu-item-active {
-            border-bottom: none;
-        }
-
-        .menu-button {
-            display: block;
-            margin-right: 20px;
-        }
-
-        #menu-button-icon {
-            height: 17px;
-            width: 24px;
-        }
-
-        .mobile-nav {
-            height: 60px;
-            display: flex;
-        }
-
-        .mobile-nav > .nav-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-transform: capitalize;
-
-            margin: 0 17px;
-            padding: 0 5px;
-        }
-
-        .nav-container {
-            height: auto;
-            flex-direction: column;
-        }
-
-        .menu-row {
-            padding: 5px 0;
-            flex-wrap: wrap;
-            overflow: hidden;
-            justify-content: space-between;
-            border-top: 1px dashed var(--font-color);
-        }
-
-        .hide-menu-row {
-            height: 0;
-            padding: 0;
-            border-top: none;
-        }
-
-        .menu-row > .menu-item {
-            width: 50%;
-            margin: 0;
-            padding: 1rem 0;
-            text-align: center;
-        }
-    }
-</style><style>
-    .foot {
-        opacity: 0.6;
-        border-top: 1px solid var(--line-color);
-        margin-top: 20px;
-        padding: 20px 0;
-        font-size: 0.8rem;
-    }
-
-    .foot a {
-        color: var(--font-color);
-        text-decoration: underline;
-    }
-</style>
-
-    <link rel="stylesheet" href="/assets/css/dark-mode.css" />
-</head>
-
-
-    
-<body>
-    <header>
-        
-
-<div class="nav-container">
-    <a class="logo" href="/">
-        <img src="/assets/img/cupcake.svg" alt="">
-    </a>
-
-    <div class="mobile-nav stack" horizontal-layout="space-between"  vertical-layout="center">
-        <div class="stack nav-title">
-            project
-        </div>
-
-        <div class="menu-button" onclick="onMenuButtonClick()">
-            <img id="menu-button-icon" src="/assets/img/menu.svg" alt="">
-        </div>
-    </div>
-
-    <div class="stack menu-row hide-menu-row">
-        <a class="menu-item " href="/">🏠 home</a>
-        <a class="menu-item " href="/news/">📰 news</a>
-        <a class="menu-item menu-item-active" href="/project/">📁 project</a>
-        <a class="menu-item " href="/teaching/">👩🏻‍🏫 teaching</a>
-        <a class="menu-item " href="/publication/">📖 publication</a>
-        <a class="menu-item " href="/posts/">📄 posts</a>
-    </div>
-
-</div>
-
-<script>
-    function onMenuButtonClick () {
-        let node = document.querySelector(".menu-row").classList
-
-        if (node.contains("hide-menu-row")) {
-            node.remove("hide-menu-row")
-            document.querySelector("#menu-button-icon").setAttribute("src", "/assets/img/close.svg")
-        }
-        else {
-            node.add("hide-menu-row")
-            document.querySelector("#menu-button-icon").setAttribute("src", "/assets/img/menu.svg")
-        }
-    }
-</script>
-
-    </header>
-
-    <article class="stack" direction="column">
-        
-
-        <div class="markdown">
-            <h1 id="efficient-mobile-deep-inference">Efficient Mobile Deep Inference</h1>
-<p>An ever-increasing number of mobile applications are leveraging deep learning
-models to provide novel and useful features, such as real-time language
-translation and object recognition. However, current mobile inference paradigm
-requires application developers to statically trade-off between inference
-accuracy and inference speed during development time. As a result, mobile user
-experience is negatively impact given dynamic inference scenarios and
-heterogeneous device capacity. The MODI project proposes new research in
-designing and implementing a mobile-aware deep inference platform that combines
-innovations in both algorithm and system optimizations.</p>
-<p><strong>Acknowledgements:</strong> This project is generously supported by NSF Grant
-#1755659, #1815619, and Google Cloud Research Credits.</p>
-<h1 id="project-personnel">Project Personnel</h1>
-<div class="personnel"><a href="https://tianguo.info"><img src="/assets/students/tian.jpg"/><p>Tian Guo</p></a></div>
-<div class="personnel"><a href="https://web.cs.wpi.edu/~xkong/"><img src="/assets/collaborators/xiangnan-kong.jpg"/><p>Xiangnan Kong</p></a></div>
-<div class="personnel"><a href="http://www.samogden.net"><img src="/assets/students/sam-ogden.jpg"/><p>Sam Ogden</p></a></div>
-<div class="personnel"><a href="https://web.cs.wpi.edu/~sli8"><img src="/assets/students/shijian-li.jpg"/><p>Shijian Li</p></a></div>
-<div class="personnel"><a href="https://web.cs.wpi.edu/~xdai5/"><img src="/assets/students/xin-dai.jpg"/><p>Xin Dai</p></a></div>
-<div class="personnel"><a><img href="" src="/assets/students/matt.jpg"/><p>Matt LeMay</p></a></div>
-<div class="personnel"><a><img href="" src="/assets/students/kit.jpg"/><p>Karitta Zellerbach</p></a></div>
-<div class="personnel"><a><img href="" src="/assets/students/ioannis.jpg"/><p>Ioannis Kyriazis</p></a></div>
-<h1 id="papers">Papers</h1>
-<!-- Note the naming convention for the thumbnail png  -->
-<p><strong>CINET: Redesigning Deep Neural Networks forEfficient Mobile-Cloud Collaborative Inference</strong></p>
-<p><em>Xin Dai, Xiangnan Kong, Tian Guo, Yixian Huang</em></p>
-<p>SIAM International Conference on Data Mining (<strong>SDM'21</strong>)</p>
-<pre class="hljs"><code>@inproceedings{cinet_sdk21,
+<html><head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta charset="utf-8"><link rel="stylesheet" href="/assets/css/base.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css"><link rel="stylesheet" media="(prefers-color-scheme:light)" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/tomorrow.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/atom-one-dark.css"><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script><title>Mobile Deep Inference | Tian Guo</title><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="YiqinZhao"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍💻</text></svg>"><style>body{margin:0}img{width:100%}a{color:var(--font-color)}</style><style>.title{font-size:3rem;font-weight:700;margin:0 0 10px 0}.meta-row{border-bottom:1px dashed rgba(0,0,0,.4);margin-bottom:20px;opacity:.7;font-style:italic;flex-wrap:wrap;padding:10px 0}.meta-row>*{line-height:1.5rem}.date{margin-right:.5rem}.tag{margin-right:.5rem}.markdown strong>img{border:1px solid rgba(0,0,0,.6)}.hero-wrapper{background-color:#f4f5f7;padding:0 0 40px 0}.hero-container{padding:20px 0;position:relative;align-items:flex-start}.markdown strong>img{border:1px solid rgba(0,0,0,.6)}@media (max-width:480px){.meta-row{flex-wrap:wrap}}@media (prefers-color-scheme:dark){.label-icon{filter:invert(1)}.markdown strong>img{filter:invert(.85)}}</style><style>.nav-container{width:100%;height:60px;padding:20px 0;display:flex;flex-direction:row;align-items:center;justify-content:space-between}.logo{font-size:1.5rem;font-weight:700;cursor:pointer;color:var(--font-color);transition:opacity .1s linear}.logo:hover{opacity:1}.logo>img{width:3rem}.menu-item{font-size:1.3rem;font-weight:700;opacity:.7;text-transform:capitalize;margin:0 17px;padding:0 5px;cursor:pointer;transition:opacity .1s linear,border-bottom .1s linear}.menu-item:hover{opacity:1;border-bottom:3px solid #979797}.menu-item-active{opacity:1;border-bottom:3px solid #979797}.menu-item:nth-last-child(1){margin-right:0}.menu-row>a{color:var(--font-color)}.menu-row>a:hover{text-decoration:none}.menu-button{display:none}.mobile-nav{width:100%;display:none}@media (prefers-color-scheme:dark){#menu-button-icon{filter:invert()}}@media (min-width:320px) and (max-width:768px){body{padding-top:61px}.hero-header{overflow:hidden}.logo{display:none}.nav-container{padding:0 0;background-color:rgba(var(--font-rgb),.1);position:fixed;top:0;border-bottom:1px solid #636363;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:10;justify-content:flex-end}.menu-item-active{border-bottom:none}.menu-button{display:block;margin-right:20px}#menu-button-icon{height:17px;width:24px}.mobile-nav{height:60px;display:flex}.mobile-nav>.nav-title{font-size:1.3rem;font-weight:700;text-transform:capitalize;margin:0 17px;padding:0 5px}.nav-container{height:auto;flex-direction:column}.menu-row{padding:5px 0;flex-wrap:wrap;overflow:hidden;justify-content:space-between;border-top:1px dashed var(--font-color)}.hide-menu-row{height:0;padding:0;border-top:none}.menu-row>.menu-item{width:50%;margin:0;padding:1rem 0;text-align:center}}</style><style>.foot{opacity:.6;border-top:1px solid var(--line-color);margin-top:20px;padding:20px 0;font-size:.8rem}.foot a{color:var(--font-color);text-decoration:underline}</style><link rel="stylesheet" href="/assets/css/dark-mode.css"></head><body><header><div class="nav-container"><a class="logo" href="/"><img src="/assets/img/cupcake.svg" alt=""></a><div class="mobile-nav stack" horizontal-layout="space-between" vertical-layout="center"><div class="stack nav-title">project</div><div class="menu-button" onclick="onMenuButtonClick()"><img id="menu-button-icon" src="/assets/img/menu.svg" alt=""></div></div><div class="stack menu-row hide-menu-row"><a class="menu-item" href="/">🏠 home</a> <a class="menu-item" href="/news/">📰 news</a> <a class="menu-item menu-item-active" href="/project/">📁 project</a> <a class="menu-item" href="/teaching/">👩🏻‍🏫 teaching</a> <a class="menu-item" href="/publication/">📖 publication</a> <a class="menu-item" href="/posts/">📄 posts</a></div></div><script>function onMenuButtonClick(){let e=document.querySelector(".menu-row").classList;e.contains("hide-menu-row")?(e.remove("hide-menu-row"),document.querySelector("#menu-button-icon").setAttribute("src","/assets/img/close.svg")):(e.add("hide-menu-row"),document.querySelector("#menu-button-icon").setAttribute("src","/assets/img/menu.svg"))}</script></header><article class="stack" direction="column"><div class="markdown"><h1 id="efficient-mobile-deep-inference">Efficient Mobile Deep Inference</h1><p>An ever-increasing number of mobile applications are leveraging deep learning models to provide novel and useful features, such as real-time language translation and object recognition. However, current mobile inference paradigm requires application developers to statically trade-off between inference accuracy and inference speed during development time. As a result, mobile user experience is negatively impact given dynamic inference scenarios and heterogeneous device capacity. The MODI project proposes new research in designing and implementing a mobile-aware deep inference platform that combines innovations in both algorithm and system optimizations.</p><p><strong>Acknowledgements:</strong> This project is generously supported by NSF Grant #1755659, #1815619, and Google Cloud Research Credits.</p><h1 id="project-personnel">Project Personnel</h1><div class="personnel"><a href="https://tianguo.info"><img src="/assets/students/tian.jpg"><p>Tian Guo</p></a></div><div class="personnel"><a href="https://web.cs.wpi.edu/~xkong/"><img src="/assets/collaborators/xiangnan-kong.jpg"><p>Xiangnan Kong</p></a></div><div class="personnel"><a href="http://www.samogden.net"><img src="/assets/students/sam-ogden.jpg"><p>Sam Ogden</p></a></div><div class="personnel"><a href="https://web.cs.wpi.edu/~sli8"><img src="/assets/students/shijian-li.jpg"><p>Shijian Li</p></a></div><div class="personnel"><a href="https://web.cs.wpi.edu/~xdai5/"><img src="/assets/students/xin-dai.jpg"><p>Xin Dai</p></a></div><div class="personnel"><a><img href="" src="/assets/students/matt.jpg"><p>Matt LeMay</p></a></div><div class="personnel"><a><img href="" src="/assets/students/kit.jpg"><p>Karitta Zellerbach</p></a></div><div class="personnel"><a><img href="" src="/assets/students/ioannis.jpg"><p>Ioannis Kyriazis</p></a></div><h1 id="papers">Papers</h1><!-- Note the naming convention for the thumbnail png  --><p><strong>CINET: Redesigning Deep Neural Networks forEfficient Mobile-Cloud Collaborative Inference</strong></p><p><em>Xin Dai, Xiangnan Kong, Tian Guo, Yixian Huang</em></p><p>SIAM International Conference on Data Mining (<strong>SDM'21</strong>)</p><pre class="hljs"><code>@inproceedings{cinet_sdk21,
 author = {Dai, Xin and Kong, Xiangnan and Guo, Tian and Huang, Yixian},
 title = {CINET: Redesigning Deep Neural Networks forEfficient Mobile-Cloud Collaborative Inference},
 year = {2021},
 booktitle = {Proceedings of 2021 SIAM International Conference on Data Mining}
 series = {SDM '21}
 }
-</code></pre>
-<hr>
-<p><strong>EPNet: Learning to Exit with Flexible Multi-Branch Network</strong></p>
-<p><em>Xin Dai, Xiangnan Kong and Tian Guo</em></p>
-<p>ACM International Conference on Information and Knowledge Management (<strong>CIKM'20</strong>)</p>
-<p><a href="garn_kdd2020.pdf"><strong><img src="thumbnail_epnet_cikm2020.png" alt=""></strong></a></p>
-<pre class="hljs"><code>@inproceedings{epnet_cikm2020,
+</code></pre><hr><p><strong>EPNet: Learning to Exit with Flexible Multi-Branch Network</strong></p><p><em>Xin Dai, Xiangnan Kong and Tian Guo</em></p><p>ACM International Conference on Information and Knowledge Management (<strong>CIKM'20</strong>)</p><p><a href="garn_kdd2020.pdf"><strong><img src="thumbnail_epnet_cikm2020.png" alt=""></strong></a></p><pre class="hljs"><code>@inproceedings{epnet_cikm2020,
 author = {Dai, Xin and Kong, Xiangnan and Guo, Tian},
 title = {EPNet: Learning to Exit with Flexible Multi-Branch Network},
 year = {2020},
@@ -385,52 +20,27 @@ keywords = {early exiting, dynamic neural network, efficient neural network},
 location = {Virtual Event, Ireland},
 series = {CIKM '20}
 }
-</code></pre>
-<hr>
-<p><strong>Recurrent Networks for Guided Multi-Attention Classification</strong></p>
-<p><em>Xin Dai, Xiangnan Kong, Tian Guo, John Lee, Xinyue Liu, Constance Moore</em></p>
-<p>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (<strong>KDD'20</strong>)</p>
-<p><a href="garn_kdd2020.pdf"><strong><img src="thumbnail_garn_kdd2020.png" alt=""></strong></a></p>
-<pre class="hljs"><code>@inproceedings{garn_kdd2020,
+</code></pre><hr><p><strong>Recurrent Networks for Guided Multi-Attention Classification</strong></p><p><em>Xin Dai, Xiangnan Kong, Tian Guo, John Lee, Xinyue Liu, Constance Moore</em></p><p>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (<strong>KDD'20</strong>)</p><p><a href="garn_kdd2020.pdf"><strong><img src="thumbnail_garn_kdd2020.png" alt=""></strong></a></p><pre class="hljs"><code>@inproceedings{garn_kdd2020,
 title={Recurrent Networks for Guided Multi-Attention Classification},
 author={Xin Dai and Xiangnan Kong and Tian Guo and John Lee and Xinyue Liu and Constance Moore},
 booktitle = {Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining},
 series = {KDD'20},
 year={2020}
 }
-</code></pre>
-<hr>
-<p><strong>MDInference: Balancing Inference Accuracy and Latency for Mobile
-Applications.</strong></p>
-<p><em>Samuel S. Ogden and Tian Guo.</em></p>
-<p>2020 IEEE International Conference on Cloud Engineering (<strong>IC2E'20</strong>), Invited paper</p>
-<p><a href="mdinference_ic2e2020.pdf"><strong><img src="thumbnail_mdinference_ic2e2020.png" alt=""></strong></a></p>
-<pre class="hljs"><code>@article{mdinference_ic2e2020,
+</code></pre><hr><p><strong>MDInference: Balancing Inference Accuracy and Latency for Mobile Applications.</strong></p><p><em>Samuel S. Ogden and Tian Guo.</em></p><p>2020 IEEE International Conference on Cloud Engineering (<strong>IC2E'20</strong>), Invited paper</p><p><a href="mdinference_ic2e2020.pdf"><strong><img src="thumbnail_mdinference_ic2e2020.png" alt=""></strong></a></p><pre class="hljs"><code>@article{mdinference_ic2e2020,
   title={MDInference: Balancing Inference Accuracy and Latency for Mobile
 Applications},
   author={Samuel S. Ogden and Tian Guo},
   journal={2020 IEEE International Conference on Cloud Engineering},
   year={2020},
 }
-</code></pre>
-<hr>
-<p><strong>Perseus: Characterizing Performance and Cost of Multi-Tenant Serving for CNN Models.</strong></p>
-<p><em>Matthew LeMay, Shijian Li, Tian Guo.</em></p>
-<p>2020 IEEE International Conference on Cloud Engineering (<strong>IC2E'20</strong>)</p>
-<p><a href="perseus_ic2e2020.pdf"><strong><img src="thumbnail_perseus_ic2e2020.png" alt=""></strong></a></p>
-<pre class="hljs"><code>@article{perseus_ic2e2020,
+</code></pre><hr><p><strong>Perseus: Characterizing Performance and Cost of Multi-Tenant Serving for CNN Models.</strong></p><p><em>Matthew LeMay, Shijian Li, Tian Guo.</em></p><p>2020 IEEE International Conference on Cloud Engineering (<strong>IC2E'20</strong>)</p><p><a href="perseus_ic2e2020.pdf"><strong><img src="thumbnail_perseus_ic2e2020.png" alt=""></strong></a></p><pre class="hljs"><code>@article{perseus_ic2e2020,
   title={Perseus: Characterizing Performance and Cost of Multi-Tenant Serving for CNN Models},
   author={Matthew LeMay, Shijian Li, Tian Guo},
   journal={2020 IEEE International Conference on Cloud Engineering},
   year={2020},
 }
-</code></pre>
-<hr>
-<p><strong>MODI: Mobile Deep Inference Made Efficient by Edge Computing</strong></p>
-<p><em>Samuel S. Ogden, Tian Guo</em></p>
-<p>The USENIX Workshop on Hot Topics in Edge Computing (<strong>HotEdge'18</strong>)</p>
-<p><a href="modi_hotedge2018.pdf"><strong><img src="thumbnail_modi_hotedge2018.png" alt=""></strong></a></p>
-<pre class="hljs"><code>@inproceedings {modi_hotedge2018,
+</code></pre><hr><p><strong>MODI: Mobile Deep Inference Made Efficient by Edge Computing</strong></p><p><em>Samuel S. Ogden, Tian Guo</em></p><p>The USENIX Workshop on Hot Topics in Edge Computing (<strong>HotEdge'18</strong>)</p><p><a href="modi_hotedge2018.pdf"><strong><img src="thumbnail_modi_hotedge2018.png" alt=""></strong></a></p><pre class="hljs"><code>@inproceedings {modi_hotedge2018,
 author = {Samuel S. Ogden and Tian Guo},
 title = {{MODI}: Mobile Deep Inference Made Efficient by Edge Computing},
 booktitle = {{USENIX} Workshop on Hot Topics in Edge Computing (HotEdge 18)},
@@ -440,57 +50,11 @@ url = {https://www.usenix.org/conference/hotedge18/presentation/ogden},
 publisher = {{USENIX} Association},
 month = jul,
 }
-</code></pre>
-<hr>
-<p><strong>Cloud-based or On-device: An Empirical Study of Mobile Deep Inference</strong></p>
-<p><em>Tian Guo</em></p>
-<p>2018 IEEE International Conference on Cloud Engineering (<strong>IC2E'18</strong>)</p>
-<p><a href="mdmeasurement_ic2e2018.pdf"><strong><img src="thumbnail_mdmeasurement_ic2e2018.png" alt=""></strong></a></p>
-<pre class="hljs"><code>@article{mdmeasurement_ic2e2018,
+</code></pre><hr><p><strong>Cloud-based or On-device: An Empirical Study of Mobile Deep Inference</strong></p><p><em>Tian Guo</em></p><p>2018 IEEE International Conference on Cloud Engineering (<strong>IC2E'18</strong>)</p><p><a href="mdmeasurement_ic2e2018.pdf"><strong><img src="thumbnail_mdmeasurement_ic2e2018.png" alt=""></strong></a></p><pre class="hljs"><code>@article{mdmeasurement_ic2e2018,
   title={Cloud-Based or On-Device: An Empirical Study of Mobile Deep Inference},
   author={Tian Guo},
   journal={2018 IEEE International Conference on Cloud Engineering (IC2E)},
   year={2017},
   pages={184-190}
 }
-</code></pre>
-
-        </div>
-    </article>
-
-    
-
-<footer class="stack foot" direction="column" horizontal-layout="center">
-    <span>© <a href="/">Tian Guo</a> 2021. Last Updated: Feb 3, 2021</span>
-    <span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
-<script>
-    window.addEventListener("load", function () {
-        document.querySelectorAll(".encrypted").forEach(v => {
-            v.addEventListener("click", function () {
-                if (!this.classList.contains("encrypted")) return
-
-                swal("Password", {
-                    content: "input",
-                })
-                .then((password) => {
-                    let t = this
-
-                    while(!t.classList.contains("markdown")) t = t.parentNode
-
-                    t.querySelectorAll(".encrypted").forEach(v => {
-                        v.innerHTML = CryptoJS.AES.decrypt(v.innerHTML, password).toString(CryptoJS.enc.Utf8)
-                        v.classList.remove("encrypted")
-                        v.classList.add("decrypted")
-                    })
-                });
-            })
-        })
-    })
-</script>
-
-</body>
-</html>
+</code></pre></div></article><footer class="stack foot" direction="column" horizontal-layout="center"><span>© <a href="/">Tian Guo</a> 2021. Last Updated: Feb 4, 2021</span> <span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script><script>window.addEventListener("load",function(){document.querySelectorAll(".encrypted").forEach(e=>{e.addEventListener("click",function(){this.classList.contains("encrypted")&&swal("Password",{content:"input"}).then(t=>{let e=this;for(;!e.classList.contains("markdown");)e=e.parentNode;e.querySelectorAll(".encrypted").forEach(e=>{e.innerHTML=CryptoJS.AES.decrypt(e.innerHTML,t).toString(CryptoJS.enc.Utf8),e.classList.remove("encrypted"),e.classList.add("decrypted")})})})})})</script></body></html>
