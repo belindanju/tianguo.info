@@ -438,11 +438,6 @@ a:hover {
     background: #F0F0F5;
 }
 
-.markdown .hljs>code {
-    display: block;
-    color: black;
-}
-
 .markdown code {
     /* width: 100%; */
     /* padding: 1rem 2rem; */
@@ -456,22 +451,14 @@ a:hover {
     /* border: 1px solid rgba(0, 0, 0, 0.1); */
     border-radius: 2px;
     /* font-weight: 700; */
-    display: inline-flex;
-    overflow: scroll;
+    /* display: inline-flex; */
+    overflow: auto;
     font-family: 'Menlo', 'Consolas', 'Inconsolata', monospace;
 }
 
 .markdown code * {
     line-height: 1.25em;
     font-family: 'Menlo', 'Consolas', 'Inconsolata', monospace;
-}
-
-.markdown pre.hljs {
-    padding: 1rem;
-}
-
-.markdown pre.hljs>code {
-    padding: 0;
 }
 
 .markdown pre>code {
