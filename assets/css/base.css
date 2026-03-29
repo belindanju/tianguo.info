@@ -4,18 +4,19 @@
     --font-rgb: 0, 0, 0;
     --highlight-rgb: 224, 224, 224;
 
-    --tint-color: rgba(86, 150, 231, 100);
-    --bg-color: #f5f5f5;
-    --font-color: #000000;
+    --tint-color: #f38630;
+    --bg-color: #f5f4f0;
+    --font-color: #1a1a1a;
     --front-color: rgb(211, 211, 211);
     --line-color: rgba(0, 0, 0, 0.4);
-    --highlight-color: rgb(224, 224, 224);
+    --highlight-color: #e8ebe4;
+    --highlight-rgb: 167, 219, 216;
 }
 
 * {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-    letter-spacing: -.01em;
-    line-height: 1.33337;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    letter-spacing: 0;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
 }
@@ -295,11 +296,11 @@ a:hover {
     text-decoration: underline;
 }
 .markdown a {
-    color: #58a6ff ;
-    text-decoration-color: #58a6ff;
+    color: #f38630 ;
+    text-decoration-color: #f38630;
 }
 .markdown a:hover {
-    text-decoration-color: #58a6ff;
+    text-decoration-color: #f38630;
 }
 
 .markdown p {
